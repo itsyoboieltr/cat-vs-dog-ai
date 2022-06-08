@@ -2,9 +2,15 @@ import { useState } from 'react';
 import * as tf from '@tensorflow/tfjs';
 import { Rank, Tensor } from '@tensorflow/tfjs';
 import Grid from '@mui/material/Grid';
-import { createTheme, ThemeProvider, Typography } from '@mui/material';
+import {
+  createTheme,
+  ThemeProvider,
+  Typography,
+  IconButton,
+} from '@mui/material';
 import FileUpload from './FileUpload';
 import useEventListener from '@use-it/event-listener';
+import GitHubIcon from '@mui/icons-material/GitHub';
 (window as any).global = window;
 
 export default function App() {
@@ -55,7 +61,16 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <Grid container spacing={1} justifyContent={'center'}>
         <Grid item xs={12} sx={{ textAlign: 'center' }}>
-          <Typography variant={'h5'} children={'Cat VS Dog AI'} />
+          <Typography component={'div'} variant={'h5'}>
+            Cat VS Dog AI
+            <IconButton
+              sx={{ ml: 0.5 }}
+              onClick={() =>
+                window.open('https://github.com/itsyoboieltr/cat-vs-dog-ai')
+              }>
+              <GitHubIcon sx={{ color: 'black' }} />
+            </IconButton>
+          </Typography>
           <Typography component={'div'} sx={{ fontWeight: 'lighter' }}>
             Author:{' '}
             <Typography
