@@ -1,0 +1,6 @@
+.DS_Store
+dataset
+weights
+model.h5
+weights.h5
+submission.csv
