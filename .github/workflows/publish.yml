@@ -13,6 +13,7 @@ jobs:
 
       - name: Install and Build 🔧
         run: |
+          cd app
           npm i
           VITE_BASE=/cat-vs-dog-ai/ npm run build
 
